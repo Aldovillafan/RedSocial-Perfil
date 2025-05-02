@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Social Estudiantil</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/tabs.css">
+</head>
+<body>
+    <div class="perfil">
+        <!-- Encabezado con avatar -->
+        <div class="encabezado">
+            <img src="img/cdmx.jpeg" alt="Avatar" class="avatar">
+            <h1 id="nombre-usuario">Usuario</h1>
+            <p class="carrera" id="carrera-usuario">Carrera aquí</p>
+            <button id="editar-perfil" class="btn-editar">✏️ Editar</button>
+        </div>
+
+        <!-- Formulario oculto para editar -->
+        <div id="form-editar" class="formulario-editar" style="display: none;">
+            <h3>Editar Perfil</h3>
+            <form id="form-perfil">
+                <input type="text" id="input-nombre" placeholder="Nombre">
+                <input type="text" id="input-carrera" placeholder="Carrera">
+                <textarea id="input-descripcion" placeholder="Descripción"></textarea>
+                <button type="submit" class="btn-guardar">Guardar</button>
+                <button type="button" id="cancelar-editar" class="btn-cancelar">Cancelar</button>
+            </form>
+        </div>
+
+        <!-- Información -->
+        <div class="info">
+            <p class="descripcion" id="texto-descripcion">Descripción de uno aquí.</p>
+            
+            <div class="estadisticas">
+                <span><strong id="num-publicaciones">5</strong> publicaciones</span>
+                <span><strong id="num-seguidores">6</strong> seguidores</span>
+                <span><strong id="num-seguidos">8</strong> seguidos</span>
+            </div>
+        </div>
+
+        <!-- Pestañas interactivas -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="hilos">Hilos</button>
+            <button class="tab-btn" data-tab="publicaciones">Publicaciones</button>
+            <button class="tab-btn" data-tab="marketplace">Marketplace</button>
+        </div>
+
+        <!-- Contenido dinámico -->
+        <div class="seccion-contenido">
+            <!-- Sección de Hilos -->
+            <div id="hilos" class="tab-contenido active">
+                <div class="nuevo-hilo">
+                    <textarea placeholder="Inicia un nuevo hilo de discusión..." id="texto-hilo"></textarea>
+                    <button id="btn-crear-hilo" class="btn-primario">Crear Hilo</button>
+                </div>
+                <div id="lista-hilos">
+                    <!-- Los hilos se agregarán aquí con JS -->
+                </div>
+            </div>
+
+            <!-- Sección de Publicaciones -->
+            <div id="publicaciones" class="tab-contenido">
+                <div class="nueva-publicacion">
+                    <textarea placeholder="¿Qué estás aprendiendo hoy?" id="texto-publicacion"></textarea>
+                    <button id="btn-publicar" class="btn-primario">Publicar</button>
+                </div>
+                <div id="lista-publicaciones">
+                    <!-- Las publicaciones se agregarán aquí con JS -->
+                </div>
+            </div>
+
+            <!-- Sección de Marketplace -->
+            <div id="marketplace" class="tab-contenido">
+                <div class="nuevo-producto">
+                    <input type="text" id="producto-titulo" placeholder="Título del producto">
+                    <textarea id="producto-descripcion" placeholder="Descripción"></textarea>
+                    <input type="number" id="producto-precio" placeholder="Precio ($)">
+                    <button id="btn-publicar-producto" class="btn-primario">Publicar Producto</button>
+                </div>
+                <div id="lista-productos">
+                    <!-- Los productos se agregarán aquí con JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/form.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
