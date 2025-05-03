@@ -110,3 +110,43 @@ document.addEventListener('click', (e) => {
         alert('Función de contacto en desarrollo');
     }
 });
+
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remover clase active de todos
+        document.querySelectorAll('.nav-link').forEach(el => {
+            el.classList.remove('active');
+        });
+        
+        // Añadir al clickeado
+        this.classList.add('active');
+        
+        // Aquí puedes añadir lógica para cambiar contenido
+        const target = this.querySelector('span').textContent;
+        console.log(`Navegando a: ${target}`);
+        // Ejemplo: if(target === "Perfil") { cargarPerfil(); }
+    });
+});
+document.querySelector('.btn-agregar').addEventListener('click', function() {
+    // Aquí puedes implementar:
+    // 1. Mostrar una lista de usuarios sugeridos
+    // 2. Abrir un modal de búsqueda
+    // 3. O cualquier otra funcionalidad
+    console.log("Mostrar lista de usuarios");
+    
+    // Ejemplo básico:
+    const listaUsuarios = document.createElement('div');
+    listaUsuarios.className = 'lista-usuarios';
+    listaUsuarios.innerHTML = `
+        <h3>Usuarios sugeridos</h3>
+        <ul>
+            <li>Usuario 1 <button class="btn-seguir">Seguir</button></li>
+            <li>Usuario 2 <button class="btn-seguir">Seguir</button></li>
+            <li>Usuario 3 <button class="btn-seguir">Seguir</button></li>
+        </ul>
+    `;
+    document.body.appendChild(listaUsuarios);
+});
