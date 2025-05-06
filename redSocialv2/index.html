@@ -57,6 +57,7 @@
                     <option value="Ingeniería en Innovación Agricola Sustentable">
                 </datalist>
                 <textarea id="input-descripcion" placeholder="Descripción"></textarea>
+                <input type="file" id="cambiar-avatar" accept="image/*" style="display: none;">
                 <button type="submit" class="btn-guardar">Guardar</button>
                 <button type="button" id="cancelar-editar" class="btn-cancelar">Cancelar</button>
             </form>
@@ -80,8 +81,36 @@
 
         
     </div>
+
     <!-- seccion de publicacion-->
-    
+    <div class="tab-contenido" id="hilos">
+    <div class="lista-hilos">
+        <!-- Ejemplo de hilo -->
+        <div class="hilo">
+            <div class="hilo-header">
+                <img src="img/avatar.jpg" class="avatar-small">
+                <span class="hilo-usuario">@usuario</span>
+            </div>
+            <p class="hilo-texto">Este es un hilo de ejemplo, similar a X (Twitter). ¡Puedes escribir hasta 280 caracteres!</p>
+            <div class="hilo-acciones">
+                <button class="btn-like">❤️ 12</button>
+                <button class="btn-compartir">↗️ Compartir</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="tab-contenido active" id="publicaciones">
+        <div class="nueva-publicacion">
+            <textarea id="texto-publicacion" placeholder="¿Qué quieres compartir?"></textarea>
+            <button id="btn-publicar" class="btn-primario">Publicar</button>
+        </div>
+        <div id="lista-publicaciones">
+            <!-- Las publicaciones aparecerán aquí -->
+        </div>
+    </div>
+    <div class="tab-contenido" id="marketplace">
+        <!-- Contenido de marketplace -->
+    </div>
 
 
 
@@ -95,8 +124,6 @@
             <i class="fas fa-store"></i>
             <span>Marketplace</span>
         </a>
-        
-        </a>
         <a href="#" id="btn-crear-hilo" class="nav-link">
             <i class="fas fa-search"></i>
             <span>Buscar</span>
@@ -104,6 +131,7 @@
         <a href="#" class="nav-link">
             <i class="fas fa-comment-dots"></i>
             <span>Mensajes</span>
+        </a>
         
         <a href="#" class="nav-link">
             <i class="fas fa-user"></i>

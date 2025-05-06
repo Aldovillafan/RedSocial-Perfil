@@ -330,7 +330,7 @@ body {
 }
 
 .nav-link.active {
-    color: #3897f0; /* Color de Instagram para referencia */
+    color: #3897f0; /* Color */
 }
 
 .nav-link:hover {
@@ -357,10 +357,6 @@ body {
     .info{
         font-size: 12px;
     }
-
-    
-
-
 }
 
 
