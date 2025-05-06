@@ -150,3 +150,32 @@ document.querySelector('.btn-agregar').addEventListener('click', function() {
     `;
     document.body.appendChild(listaUsuarios);
 });
+document.querySelector('.avatar').addEventListener('click', () => {
+    document.getElementById('cambiar-avatar').click();
+});
+
+document.getElementById('cambiar-avatar').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            document.querySelector('.avatar').src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+// Ejemplo para likes con contador
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-like')) {
+        const likeCount = e.target.nextElementSibling || document.createElement('span');
+        if (!e.target.dataset.liked) {
+            e.target.dataset.liked = 'true';
+            likeCount.textContent = '1';
+            likeCount.className = 'like-count';
+            e.target.after(likeCount);
+        } else {
+            delete e.target.dataset.liked;
+            likeCount.remove();
+        }
+    }
+});

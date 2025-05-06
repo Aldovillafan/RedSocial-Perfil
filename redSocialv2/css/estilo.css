@@ -33,35 +33,56 @@ body {
 }
 
 /* Encabezado */
+/* Contenedor principal del encabezado */
 .encabezado {
-    padding: 20px;
-    text-align: center;
+    padding: 15px;
+    text-align: center; /* Centra el contenido interno */
     background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
     color: var(--texto-light);
-    position: relative;
 }
 
+/* Contenedor del avatar + info */
+.perfil-superior {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 15px;
+    margin-bottom: 15px;
+    
+}
+
+/* Avatar */
 .avatar {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     border: 2px solid var(--texto-light);
-    margin-bottom: 10px;
     object-fit: cover;
-}
-.descripcion {
-    margin: 15px 0;
-    padding: 10px;
-    
-    border-radius: 8px;
+    flex-shrink: 0;
 }
 
+/* Info del usuario */
+.info-usuario {
+    flex: 1;
+    max-width: 60%; /* Evita que el texto ocupe todo el ancho */
+   
+}
+
+.info-usuario h1,
+.info-usuario p {
+    margin: 5px 0;
+    text-align: center; /* Alineación izquierda para el texto */
+}
+
+/* Botones (centrados debajo de la info) */
 .acciones-perfil {
     display: flex;
+    justify-content: center; /* Centra los botones */
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
+/*apartado de botones */
 .btn-editar, .btn-publicar {
     flex: 1;
     padding: 10px;
@@ -101,6 +122,7 @@ body {
 
 .btn-editar:hover {
     background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
 }
 
 .btn-publicar:hover {
@@ -110,6 +132,7 @@ body {
 
 .btn-agregar:hover {
     background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
 }
 
 
@@ -149,6 +172,7 @@ body {
 
 /* Información del perfil */
 .info {
+    
     padding: 15px 20px;
     border-bottom: 1px solid #eee;
 }
@@ -312,3 +336,31 @@ body {
 .nav-link:hover {
     color: #3897f0;
 }
+
+@media (max-width: 500px) {
+    .perfil-superior {
+        flex-direction: column;
+        align-items: center; /* Centra horizontalmente todos los elementos */
+        text-align: center; /* Centra el texto dentro de .info-usuario */
+        gap: 10px; /* Espacio entre avatar e info */
+    }
+    .info-usuario {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: none; /* Elimina cualquier límite previo */
+    }
+
+    .info-usuario h1,
+    .info-usuario p {
+        text-align: center; /* Asegura que el texto esté centrado */
+        margin: 5px 0; /* Espaciado uniforme */
+    }
+    .info{
+        font-size: 12px;
+    }
+
+    
+
+
+}
+
+
